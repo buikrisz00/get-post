@@ -1,48 +1,15 @@
-const http = require('http');
+/* const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const server = http.createServer((req, res) => {
-
+const serverFunction = (req, res) => {
 	const errorHTML = `
-		
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preconnect" href="https://fonts.googleapis.com"> 
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-		<style>
-			body{
-				padding: 0; margin: 0;
-				font-family: 'Montserrat', sans-serif;
-				font-weight: 800;
-				background-color: #4343F9;
-				color: #fff;
-			}
-			#root{
-				width: 100%;
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-size: 21px;
-			}
-		</style>
-		<title>Not here</title>
-	</head>
-	<body>
-		<div id="root">Rise your gaze to the sky<br/>than a bit back to the URL bar<br/>and check that link again</div>
-	</body>
-	</html>
-	
+	ERROR van
 	`;
-    
-	let filePath = path.resolve(__dirname + '/../frontend' + req.url);
-    
+	
+	//let filePath = path.resolve(__dirname + '/../frontend' + req.url);
+	let filePath = path.resolve(`${__dirname}/../frontend${req.url}`);
+	
 	fs.access(filePath, fs.constants.R_OK, (err) => {
 	if(err){
 		res.statusCode = 404;
@@ -61,9 +28,31 @@ const server = http.createServer((req, res) => {
 		});
 	}
 	});
+}
+
+const server = http.createServer(serverFunction);
+
+const port = 9000;
+const ip = "127.0.0.1";
+const listenFun = () => {
+	const addr = server.address();
+	console.log(`http://${addr.address}:${addr.port}`);
+	console.log("random szöveg");
+}
+server.listen(port, ip, listenFun); */
+
+const express = require("express");
+const path = require("path");
+const app = express();
+
+const frontend = path.join(`${__dirname}/../frontend`);
+
+app.get("/", (req, res) => {
+	res.sendFile(`${frontend}/index.html`);
 });
 
-server.listen(9000, "127.0.0.1", () => {
-    const addr = server.address();
-		console.log(`http://${addr.address}:${addr.port}`);
-});
+app.use("/public", express.static(`${frontend}/public`));
+
+app.listen(9000, () => {
+	console.log(`http://127.0.0.1:9000`)
+})

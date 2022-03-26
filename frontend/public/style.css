@@ -1,0 +1,142 @@
+/* CSS reset start */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+  }
+a{
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+textarea,
+select {
+    appearance: none !important;
+    border-radius: 0;
+}
+
+ol, ul, li {
+    list-style:none;display:block;
+}
+
+/* CSS reset end */
+
+#root {
+    position: relative;
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 100%;
+}
+
+#root .beerTypeHolder {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background-color: antiquewhite;
+    padding-top: 10px;
+    height: 300px;
+    width: 100%;
+}
+
+#root img {
+    position: absolute;
+}
+
+#root img.beerTap {
+    bottom: 0;
+    left: 50%;
+    height: 640px;
+    width: 1300px;
+    transform: translateX(-50%);
+}
+
+#root .beerHolder {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 640px;
+    width: 1300px;
+    transform: translateX(-50%);
+}
+
+#root .beerHolder img.beer {
+    bottom: 30px;
+    height: 270px;
+    width: 100px;
+}
+
+#root .beerHolder img.beer:nth-child(1) {
+    left: 288px;
+}
+
+#root .beerHolder img.beer:nth-child(2) {
+    left: 451px;
+}
+
+#root .beerHolder img.beer:nth-child(3) {
+    left: 612px;
+}
+
+#root .beerHolder img.beer:nth-child(4) {
+    left: 776px;
+}
+
+#root .beerHolder img.beer:nth-child(5) {
+    left: 936px;
+}
+
+#root div.beerTypes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 150px;
+    width: 200px;
+    border-bottom: 7px solid #000;
+    border-left: 7px solid #000;
+    border-right: 7px solid #000;
+}
+
+#root div.beerTypes.clickedOnce {
+    position: absolute;
+    transform: rotate(180deg);
+    left: 500px;
+    transition: 1s;
+}
+
+#root div.beerTypes h2 {
+    font-size: 17px;
+    pointer-events: none;
+}
+
+#root div.beerTypes h4 {
+    font-size: 13px;
+    pointer-events: none;
+}
+
+#root div.beerTypes p {
+    font-size: 11px;
+    pointer-events: none;
+}
