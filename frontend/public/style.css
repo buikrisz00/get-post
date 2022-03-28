@@ -365,3 +365,60 @@ ol, ul, li {
     font-size: 50px;
     color: #fff;
 }
+
+@media (max-width: 1600px) {
+    #root div.beerTypes {
+        top: 27vh;
+    }
+
+    #root div.beerTypes:nth-child(1) {
+        transform: translateX(calc(-50% - 450px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(2) {
+        transform: translateX(calc(-50% - 350px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(3) {
+        transform: translateX(calc(-50% - 250px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(4) {
+        transform: translateX(calc(-50% - 150px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(5) {
+        transform: translateX(calc(-50% - 50px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(6) {
+        transform: translateX(calc(-50% + 50px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(7) {
+        transform: translateX(calc(-50% + 150px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(8) {
+        transform: translateX(calc(-50% + 250px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(9) {
+        transform: translateX(calc(-50% + 350px)) scale(0.4);
+    }
+    
+    #root div.beerTypes:nth-child(10) {
+        transform: translateX(calc(-50% + 450px)) scale(0.4);
+    }
+
+    #root div.beerTypes.clicked {
+        transform: scale(1.8);
+
+    }
+}
+
+@media (max-width: 1330px) {
+    #root .beerDataDiv {
+        width: 300px;
+    }
+}
