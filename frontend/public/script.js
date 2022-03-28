@@ -61,6 +61,8 @@ async function loadEvent() {
                 drunknessBar.className = "";
                 drunknessBar.classList.add(`bar`);
                 drunknessBar.classList.add(`beer${drunkCounter}`);
+                rootElement.className = "";
+                rootElement.classList.add(`beer${drunkCounter}`);
                 barImg.className = "";
                 barImg.classList.add(`beer${drunkCounter}`);
                 const barImgReflow = document.querySelector(`img.beer${drunkCounter}`);
