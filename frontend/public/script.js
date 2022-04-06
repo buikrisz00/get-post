@@ -70,6 +70,14 @@ async function loadEvent() {
                 barImgReflow.offsetHeight = barImgReflow.offsetHeight;
                 barImgReflow.style.animation = null;
             }
+
+            if (drunkCounter === 10) {
+                rootElement.insertAdjacentHTML("beforeend", `
+                    <div class="gameOverDiv">
+                        <img src="/public/images/game-over.gif">
+                    </div>
+                `);
+            }
         });
     }
 
