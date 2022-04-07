@@ -74,7 +74,7 @@ async function loadEvent() {
             if (drunkCounter === 10) {
                 rootElement.insertAdjacentHTML("beforeend", `
                     <div class="gameOverDiv">
-                        <a href="/"><img src="/public/images/game-over.gif"></a>
+                        <a href="/"><img src="./public/images/game-over.gif"></a>
                     </div>
                 `);
             }
